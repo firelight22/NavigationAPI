@@ -23,8 +23,8 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var hfars = arguments.let { HomeFragmentArgs.fromBundle(it) }
-        var user = hfars.user
-        Toast.makeText(this.context, "Bienvenu sur l'app ${user.email}", Toast.LENGTH_SHORT).show()
+        var hfars = arguments?.let { HomeFragmentArgs.fromBundle(it) }
+        var user = hfars?.user
+        Toast.makeText(this.context, "Bienvenu sur l'app ${user?.email}", Toast.LENGTH_SHORT).show()
     }
 }
