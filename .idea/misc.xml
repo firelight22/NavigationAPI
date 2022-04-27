@@ -5,6 +5,8 @@
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_connexion.xml" value="0.37604166666666666" />
+        <entry key="recyclerview/src/main/res/layout/activity_main.xml" value="0.3619791666666667" />
+        <entry key="recyclerview/src/main/res/layout/item_list_voiture.xml" value="0.37604166666666666" />
       </map>
     </option>
   </component>
