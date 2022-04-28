@@ -2,6 +2,7 @@ package com.quentinrouet.recyclerview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -27,6 +28,8 @@ class MainActivity : AppCompatActivity() {
 
         val rvVoiture = findViewById<RecyclerView>(R.id.recyclerViewVoiture);
         rvVoiture.layoutManager = LinearLayoutManager(this)
-        rvVoiture.adapter = VoitureAdapter(listVoiture)
+        rvVoiture.adapter = VoitureAdapter(listVoiture, VoitureAdapter.OnVoitureClickListener {
+            Toast.makeText(this, "Tu a acheté un ${it.marque} ${it.modele}", Toast.LENGTH_SHORT).show()
+        })
     }
 }

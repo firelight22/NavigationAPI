@@ -8,9 +8,10 @@ import com.quentinrouet.recyclerview.databinding.ItemListVoitureBinding
 /**
  * Created by quentin for Navigation on 27/04/2022.
  */
-class VoitureAdapter(listVoiture: ArrayList<Voiture>) :
+class VoitureAdapter(listVoiture: ArrayList<Voiture>, listener: OnVoitureClickListener) :
     RecyclerView.Adapter<VoitureAdapter.VoitureViewHolder>() {
     var listVoiture = listVoiture;
+    var listener = listener;
 
 
     class VoitureViewHolder constructor(val binding: ItemListVoitureBinding):
@@ -24,8 +25,12 @@ class VoitureAdapter(listVoiture: ArrayList<Voiture>) :
 
     override fun onBindViewHolder(holder: VoitureViewHolder, position: Int) {
         holder.binding.voiture = listVoiture[position]
+        holder.itemView.setOnClickListener { listener.onVoitureClick(listVoiture[position]) }
     }
 
     override fun getItemCount(): Int = listVoiture.size
 
+    class OnVoitureClickListener(val listener: ( voiture:Voiture) -> Unit){
+        fun onVoitureClick(voiture:Voiture)= listener(voiture)
+    }
 }
